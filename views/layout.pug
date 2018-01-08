@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet', href='http://kendo.cdn.telerik.com/2016.3.914/styles/kendo.common-material.min.css')
+    link(rel='stylesheet', href='http://kendo.cdn.telerik.com/2016.3.914/styles/kendo.material.min.css')
+    link(rel='stylesheet', href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css')
+
+    script(src="https://cdn.auth0.com/js/auth0/8.7/auth0.min.js")
+    script(src="http://kendo.cdn.telerik.com/2016.3.914/js/jquery.min.js")
+    script(src="http://kendo.cdn.telerik.com/2016.3.914/js/kendo.all.min.js")
+    script(src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+    script(src="grid.js")
+    
+
+  body
+    nav.w3-bar.w3-border.w3-light-grey( role="navigation" )
+      .w3-bar-item.w3-text-grey Auth0 - NodeJS
+      a( href="/").w3-bar-item.w3-button Home
+      if loggedIn
+        a( href="/user" ).w3-bar-item.w3-button Profile
+        a( id="qsLogoutBtn" href="/logout").w3-bar-item.w3-button Logout
+      else
+        a( id="qsLoginBtn" href="/login" ).w3-bar-item.w3-button Login
+    block content
