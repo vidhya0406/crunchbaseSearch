@@ -50,7 +50,7 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
                 else {
                   for (var i=0; i<data.length; i++){
                     var split_data = data[i].category_list.split("|");
-                    data[i].category_list = JSON.stringify(split_data).join(", ");
+                    data[i].category_list = (JSON.stringify(split_data)).join(", ");
                     data[i].technology = JSON.stringify(data[i].technology).join(", ");
                   }
                   res.render('user', {user: req.user,btc: data});
