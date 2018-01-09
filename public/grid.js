@@ -1,5 +1,9 @@
 $(document).ready(function(){
 var grid = $("#grid").kendoGrid({
+  //Added a template to the toolbar
+       toolbar: [
+         { template: kendo.template($("#template").html()) }
+       ],
     dataSource: {
       dataType: "json",
       data:  data,
@@ -10,17 +14,6 @@ var grid = $("#grid").kendoGrid({
     height: 550,
     scrollable: {
         endless: true
-    },
-    filterable: {
-        mode: "row",
-        extra: false,
-        operators: {
-            string: {
-                startswith: "Starts with",
-                eq: "Is equal to",
-                neq: "Is not equal to"
-            }
-        }
     },
     resizable: true,
     pageable: {
@@ -52,6 +45,26 @@ var grid = $("#grid").kendoGrid({
         width:"100px"
       },
       {
+        field:"technology",
+        title:"Technology",
+        width:"100px"
+      },
+      {
+        field:"patents_granted",
+        title:"Patents Granted",
+        width:"100px"
+      },
+      {
+        field:"patents_pending",
+        title:"Patents Pending",
+        width:"100px"
+      },
+      {
+        field:"other_ip",
+        title:"Other Intellectual Property",
+        width:"100px"
+      },
+      {
       command: {
               text: "Homepage",
               click: function(e) {
@@ -69,4 +82,42 @@ var grid = $("#grid").kendoGrid({
     }
     ]
   }).data("kendoGrid");
+
+  //Searching the Grid by the value of the textbox
+        $("#btnSearch").click(function () {
+          var searchValue = $('#searchBox').val();
+
+          //Setting the filter of the Grid
+          $("#grid").data("kendoGrid").dataSource.filter({
+            logic  : "or",
+            filters: [
+              {
+                field   : "technology",
+                operator: "contains",
+                value   : searchValue
+              },
+              {
+                field   : "category_list",
+                operator: "contains",
+                value   : searchValue
+              },
+              {
+                field   : "name",
+                operator: "contains",
+                value   : searchValue
+              },
+              {
+                field   : "Country",
+                operator: "contains",
+                value   : searchValue
+              }
+            ]
+          });
+        });
+
+        //Clearing the filter
+        $("#btnReset").click(function () {
+          $("#grid").data("kendoGrid").dataSource.filter({});
+        });
 });
+
