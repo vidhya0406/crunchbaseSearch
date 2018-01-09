@@ -25,7 +25,6 @@ var grid = $("#grid").kendoGrid({
       },
 
       {
-        template: "#= category_list.join(', ') #",
         field:"category_list",
         title:"Category",
       },
@@ -39,7 +38,6 @@ var grid = $("#grid").kendoGrid({
         title:"Status",
       },
       {
-        template: "#= technology.join(', ') #",
         field:"technology",
         title:"Technology",
       },
