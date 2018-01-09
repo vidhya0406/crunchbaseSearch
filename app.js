@@ -15,6 +15,13 @@ dotenv.load();
 const routes = require('./routes/index');
 const user = require('./routes/user');
 
+<script id="template" type="text/x-kendo-template">
+    		<label class="search-label" for="searchBox">Search Grid:</label>
+   		  <input type="search" id="searchBox" class="k-textbox" style="width: 250px"/>
+  		  <input type="button" id="btnSearch" class="k-button" value="Search"/>
+  		  <input type="button" id="btnReset" class="k-button" value="Reset"/>
+</script>
+
 // This will configure Passport to use Auth0
 const strategy = new Auth0Strategy(
   {
