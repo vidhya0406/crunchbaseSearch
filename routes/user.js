@@ -48,7 +48,6 @@ router.get('/', ensureLoggedIn, function(req, res, next) {
                   console.log("Failed to fetch the collection: ", collection);
                 }
                 res.render('user', {user: req.user,btc: data});
-                }
               });
             });
           });
