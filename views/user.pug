@@ -8,11 +8,11 @@ block content
       p Welcome #{user.nickname}
       script.
         var data = !{JSON.stringify(btc)};
-        | <script id="template" type="text/x-kendo-template">
-      		| <label class="search-label" for="searchBox">Search Grid:</label>
-     		  | <input type="search" id="searchBox" class="k-textbox" style="width: 250px"/>
-    		  | <input type="button" id="btnSearch" class="k-button" value="Search"/>
-    		  | <input type="button" id="btnReset" class="k-button" value="Reset"/>
-      | </script>
+        <script id="template" type="text/x-kendo-template">
+      		<label class="search-label" for="searchBox">Search Grid:</label>
+     		<input type="search" id="searchBox" class="k-textbox" style="width: 250px"/>
+    		<input type="button" id="btnSearch" class="k-button" value="Search"/>
+    		<input type="button" id="btnReset" class="k-button" value="Reset"/>
+        </script>
       #grid
 
