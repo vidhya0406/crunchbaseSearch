@@ -25,44 +25,36 @@ var grid = $("#grid").kendoGrid({
       {
         field:"name",
         title:"Name",
-        width:"100px"
       },
 
       {
         field:"category_list",
         title:"Category",
-        width:"100px"
       },
       {
         field:"country_code",
         title:"Country",
-        width:"100px"
       },
 
       {
         field:"status",
         title:"Status",
-        width:"100px"
       },
       {
         field:"technology",
         title:"Technology",
-        width:"100px"
       },
       {
         field:"patents_granted",
         title:"Patents Granted",
-        width:"100px"
       },
       {
         field:"patents_pending",
         title:"Patents Pending",
-        width:"100px"
       },
       {
         field:"other_ip",
         title:"Other Intellectual Property",
-        width:"100px"
       },
       {
       command: {
@@ -78,7 +70,6 @@ var grid = $("#grid").kendoGrid({
               }
             },
              title: " ",
-             width: "150px"
     }
     ]
   }).data("kendoGrid");
