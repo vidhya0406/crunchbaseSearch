@@ -12,9 +12,6 @@ var grid = $("#grid").kendoGrid({
     groupable: true,
     sortable: true,
     height: 550,
-    scrollable: {
-        endless: true
-    },
     resizable: true,
     pageable: {
         refresh: true,
